@@ -1,8 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
-body{
+﻿/* You can add global styles to this file, and also import other style files */
+.background {
   width: 100vw;
   height: 100vh;
-  background-image: radial-gradient(circle farthest-corner at 50vw 50vh, #53402a 0%, rgba(0, 0, 255, 0) 50%, #465b69 95%)
+  position: absolute;
+  background: radial-gradient(circle farthest-corner at 50vw 50vh, #53402a 40%, rgba(0, 0, 255, 0) 50%, #465b69 95%)
+}
+
+body {
+  background-color: #465b69 !important;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
 }
 
 .main{
@@ -13,4 +21,14 @@ body{
 	margin: 0 10vw;
 	margin-top:30vh;
 	color:#f0ded8;
+}
+
+.start{
+  position:absolute;
+  top:80vh;
+  left:40vw;
+  width:20vw;
+  height:5vh;
+  border-radius:1vw;
+  background-color:antiquewhite;
 }

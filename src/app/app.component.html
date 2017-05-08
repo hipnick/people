@@ -1,10 +1,14 @@
-<div #main>
-	<div class="container main" >
-		<h1>
-		  Welcome to {{app.name}}
-		</h1>
-		<p>
-			{{app.description}}
-		</p>
-	</div>
+﻿<div id="scene">
+  <div class="background layer" data-depth="0.20">
+    <div class="city" *ngFor="let city of cities" [style.left]="city.x" [style.top]="city.y" >c</div>
+  </div>
+  <div class="main layer" data-depth="1">
+    <h1>
+      Welcome to {{app.name}}
+    </h1>
+    <p>
+      {{app.description}}
+    </p>
+  </div>
+  <a class="start">Start</a>
 </div>
