@@ -1,0 +1,9 @@
+﻿<input #file type="file" accept="image/*" (change)="onChange($event.target.files)" style="height:0;opacity:0;"/>
+<app-base [visible]="visible" [cls]="cls">
+  <span *ngIf="!icon" class="btn btn-default btn-file" (click)="file.click()">
+    {{label}}
+  </span>
+
+  <button md-raised-button *ngIf="icon && model" (click)="clear()" title="entfernen"><md-icon>clear</md-icon></button>
+  <button md-raised-button *ngIf="icon" (click)="file.click()" title="hochladen"><md-icon>{{icon}}</md-icon></button>
+</app-base>

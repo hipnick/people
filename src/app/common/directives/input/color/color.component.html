@@ -1,0 +1,9 @@
+﻿<app-base [visible]="visible" [cls]="cls">
+    <md-input-container>
+        <input mdInput [placeholder]="label" [colorPicker]="model" [cpToggle]="toggle"
+               (colorPickerChange)="onChange($event)"
+               [value]="model" [cpPosition]="'bottom'" />
+    </md-input-container>
+
+    <button (click)="toggle=!toggle;" [style.background]="model" [style.color]="model"></button>
+</app-base>

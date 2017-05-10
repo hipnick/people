@@ -1,0 +1,53 @@
+﻿<div *ngIf="isCellPhone()" class="row mobile-calendar">
+  <div class="col-xs-12 text-center">
+    <div *ngIf="!selectedWeek" class="weeks">
+      <div class="label label-default week" (click)="selectWeek(week)" *ngFor="let week of weeks">
+        {{week?.displayName}}
+      </div>
+    </div>
+    <div *ngIf="selectedWeek && !selectedDay" class="days">
+      <div>
+        <div class="selection">{{selectedWeek?.displayName}}</div>
+      </div>
+      <div class="label label-default day" (click)="selectDay(day)" *ngFor="let day of selectedWeek?.days">
+        {{day?.date}}
+      </div>
+    </div>
+    <div *ngIf="selectedWeek && selectedDay" class="times">
+      <div>
+        <div class="selection">{{selectedWeek?.displayName}}</div>
+        <div class="selection">{{selectedDay?.date}}</div>
+      </div>
+      <div ngClass="selectedTime == time ? 'selected' : ''" class="label label-default selectable time" (click)="selectTime(time)" *ngFor="let time of selectedDay?.times">
+        {{time?.display}}
+      </div>
+    </div>
+    <div *ngIf="selectedWeek" class="label label-default" ng-click="back()">
+      Zurück
+    </div>
+  </div>
+</div>
+<div *ngIf="!isCellPhone()" class="desktop-calendar">
+  <div class="text-center">
+    <div>
+      <!--<div class="cal-button cal-prev" (click)="prevWeek()"><md-icon>chevron_left</md-icon></div>
+      <div class="cal-button cal-next" (click)="nextWeek()"><md-icon>chevron_right</md-icon></div>-->
+      <md-tab-group>
+        <md-tab [label]="week.displayName" *ngFor="let week of weeks">
+          <div class="row calendar">
+            <div class="col-xs-1 day label-default" [ngClass]="'day'+(index+1)" *ngFor="let day of week?.days;let index=index">
+              <div class="header"><span class="day-header">{{day?.day}}</span><br /><span class="date-header">{{day?.date}}</span></div>
+
+              <div class="time" [ngClass]="{ 'selected' : selectedTime === time, 'selectable': time?.display }" *ngFor="let time of day?.times" (click)="selectTime(time)">
+                {{time?.display}}&nbsp;
+              </div>
+            </div>
+          </div>
+
+        </md-tab>
+      </md-tab-group>
+    </div>
+    <div>
+    </div>
+  </div>
+</div>

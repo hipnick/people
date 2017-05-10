@@ -1,0 +1,5 @@
+﻿<app-base [visible]="visible" [cls]="cls">
+    <md-input-container>
+        <textarea mdInput mdTextareaAutosize [placeholder]="label" [value]="model" (blur)="onChange($event.currentTarget.value)" (change)="onChange($event.currentTarget.value)"></textarea>
+    </md-input-container>
+</app-base>

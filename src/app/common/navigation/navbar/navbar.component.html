@@ -1,0 +1,35 @@
+﻿<nav class="nav navbar navbar-default navbar-fixed-top animated fadeInDown">
+  <div class="container-fluid text-center">
+    <div class="navbar-header">
+      <div class="branding">
+        <a class="navbar-brand page-scroll" href="#page-top" onclick="return false;" ng-click="navigate('top');" title="easyTermin online">
+          <img [attr.src]="logo" class="img-responsive" id="navlogo" *ngIf="logo" />
+        </a>
+      </div>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="hidden">
+          <a href="#page-top"></a>
+        </li>
+        <li *ngFor="let menu of model" [ngClass]="{'active':menu.selected}">
+
+          <a [attr.href]="menu.href" (click)="menu.canClick? navigate(menu.href) : null" [ngClass]="{inactive:!menu.active}" class="page-scroll" data-toggle="dropdown">
+            {{menu.name}}<span class="caret" *ngIf="menu.hassubpages"></span>
+          </a>
+          <ul class="dropdown-menu" *ngIf="menu.hassubpages">
+            <li><a href="#"></a></li>
+            <li class="divider"></li>
+            <li><a href="#"></a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

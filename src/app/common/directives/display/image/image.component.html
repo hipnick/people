@@ -1,0 +1,5 @@
+﻿<app-base [visible]="visible" [cls]="cls">
+    <div class="materialize">
+        <img #img [attr.class]="'responsive-img ' + cls + (zoom == true ? ' materialboxed': '')" [attr.src]="model" [attr.data-caption]="label">
+    </div>
+</app-base>

@@ -1,0 +1,11 @@
+﻿<app-base [visible]="visible" [cls]="cls">
+  <md-input-container [ngStyle]="{'padding-left':icon ? '10px':''}">
+    <md-icon *ngIf="icon">{{icon}}</md-icon>
+    <input #text mdInput [placeholder]="label" [value]="model" (keyup.enter)="enter.emit()" (blur)="onChange($event.currentTarget.value)" [type]="type" [required]="required" (change)="onChange($event.currentTarget.value)" [name]="subs + '.' + prop">
+    <app-collapse cls="animated flash" [visible]="error">
+      <md-hint>
+        <span class="alert-danger">{{error}}</span>
+      </md-hint>
+    </app-collapse>
+  </md-input-container>
+</app-base>

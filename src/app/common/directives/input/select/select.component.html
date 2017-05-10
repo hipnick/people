@@ -1,0 +1,7 @@
+﻿<app-base [visible]="visible" [cls]="cls">
+    <md-select [placeholder]="label" [ngModel]="model" (change)="onChange($event.value)">
+        <md-option *ngFor="let item of items" [value]="item.value">
+            {{item.name}}
+        </md-option>
+    </md-select>
+</app-base>

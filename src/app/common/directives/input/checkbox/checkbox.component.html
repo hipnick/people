@@ -1,0 +1,9 @@
+﻿<app-base [visible]="visible" [cls]="cls">
+  <md-checkbox [ngModel]="model == null ? false: !model" (click)="onChange()">{{label}}
+  </md-checkbox>  
+  <app-collapse cls="animated flash" [visible]="error">
+    <md-hint>
+      <span class="alert-danger">{{error}}</span>
+    </md-hint>
+  </app-collapse>
+</app-base>

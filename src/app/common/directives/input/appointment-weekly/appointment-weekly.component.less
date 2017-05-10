@@ -1,0 +1,114 @@
+﻿
+.select-week {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.mobile-calendar {
+  font-size: 2em;
+
+  .selection:last-child {
+    margin-bottom: 1em;
+  }
+
+  .label-default {
+    font-size: 60%;
+    margin: .2em;
+    display: block;
+    text-align: center;
+    padding: 1em;
+  }
+}
+
+.desktop-calendar {
+  position: relative;
+  min-width: 520px;
+  /*margin: 0 3em;*/
+
+  .cal-button {
+    text-shadow: 0px 0px 3px black;
+    font-size: 4em;
+    top: 41%;
+    padding-top: .4em;
+    padding-bottom: .4em;
+    color: grey;
+    background: black;
+    cursor: pointer;
+    position: absolute;
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+  }
+
+  .cal-button:hover, .cal-button:focus {
+    opacity: .8;
+  }
+
+  .cal-prev {
+    padding-right: 1em;
+    padding-left: .2em;
+    left: -1.25em;
+
+    md-icon {
+      font-size: inherit;
+      margin-left: -20px;
+    }
+  }
+
+  .cal-next {
+    padding-left: 1em;
+    padding-right: .2em;
+    right: -1.25em;
+
+    md-icon {
+      font-size: inherit;
+      margin-left: -40px;
+    }
+  }
+
+  .calendar {
+    max-height: 500px;
+    overflow-x: auto;
+
+    .header {
+      border-top: 1px solid red;
+
+      .day-header {
+        font-weight: bold;
+      }
+
+      .date-header {
+      }
+    }
+
+    .time:last-child {
+      border-bottom: 1px solid red;
+    }
+
+    .day:last-child {
+      border-right: 1px solid red;
+    }
+
+    .time {
+      min-height: 22px;
+      width: 100%;
+      padding: .3em 0;
+      border-top: 1px solid red;
+      border-radius: 0px;
+    }
+
+    > div {
+      //100/7
+      width: 14.28571428571429%;
+    }
+
+    .day {
+      border-left: 1px solid red;
+      padding: 0;
+    }
+
+    .day7 {
+      border-right: 1px solid red;
+    }
+  }
+}

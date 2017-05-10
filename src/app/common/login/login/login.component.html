@@ -1,0 +1,9 @@
+﻿<h1 md-dialog-title>Anmelden</h1>
+<md-dialog-content>
+    <app-text cls="col-xs-12" icon="person" [subs]="subs" prop="user" (enter)="login()" label=""></app-text>
+    <app-text cls="col-xs-12" icon="lock" [subs]="subs" prop="pass" type="password" (enter)="login()" label=""></app-text>
+</md-dialog-content>
+<md-dialog-actions>
+  <div class="spacer"></div>
+    <button md-mini-fab (click)="login()"><md-icon>check</md-icon></button>
+</md-dialog-actions>

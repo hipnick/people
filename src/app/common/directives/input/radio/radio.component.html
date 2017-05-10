@@ -1,0 +1,13 @@
+﻿<app-base [visible]="visible" [cls]="cls">
+  <md-radio-group class="radio-group" [ngModel]="model" [name]="subs + '.' + prop" [required]="required">
+    <div>{{label}} {{required? '*':''}}</div>
+    <md-radio-button *ngFor="let item of items" [value]="item.value" (click)="onChange($event)">
+      {{item.name}}
+    </md-radio-button>
+    <app-collapse cls="animated flash" [visible]="error">
+      <md-hint>
+        <span class="alert-danger animated bounce">{{error}}</span>
+      </md-hint>
+    </app-collapse>
+  </md-radio-group>
+</app-base>

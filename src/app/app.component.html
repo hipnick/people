@@ -1,14 +1,28 @@
 ﻿<div id="scene">
-  <div class="background layer" data-depth="0.20">
-    <div class="city" *ngFor="let city of cities" [style.left]="city.x" [style.top]="city.y" >c</div>
+  <div class="background layer" data-depth="0.50">
+    <div class="city" *ngFor="let city of cities" [style.left]="city.x" [style.top]="city.y">c</div>
   </div>
-  <div class="main layer" data-depth="1">
-    <h1>
-      Welcome to {{app.name}}
-    </h1>
-    <p>
-      {{app.description}}
-    </p>
+  <div class="layer" data-depth="0.1">
+    <app-collapse cls="main animated slideInDown" [visible]="current == 'start'">
+      <!--<div class="main">-->
+      <h1>
+        Welcome to {{app.name}}
+      </h1>
+      <p>
+        {{app.description}}
+      </p>
+      <a class="start" (click)="start()">Start</a>
+      <!--</div>-->
+    </app-collapse>
   </div>
-  <a class="start">Start</a>
+  <div class="layer" data-depth="0.1">
+    <app-collapse cls="main animated slideInDown" [visible]="current == 'create'">
+      <app-text subs="user" prop="name" label="Name of your People"></app-text>
+      <app-select subs="user" prop="location" label="Starting location" [items]="[{name:'Coastal, mountainous', value:'c.m'}, {name:'River delta', value:'r'}, {name:'Small Island', value: 's'}]"></app-select>
+      <span>Location affects everything about your people. For example: if you want your people to be seafaring, might want to start in the coast, or on an island</span>
+      <a>Learn more</a><br /><br />
+      <a class="start" (click)="start()">Start</a>
+    </app-collapse>
+  </div>
 </div>
+<router-outlet></router-outlet>

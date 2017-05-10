@@ -1,0 +1,11 @@
+﻿<!--<app-host-item [subs]="structure.subs" [structure]="structure" [host]="subs" *ngFor="let structure of model"></app-host-item>-->
+
+
+<!--<app-dynamic-component *ngFor="let componentData of components;trackBy:componentData?.context.subs" [componentData]="componentData">
+</app-dynamic-component>-->
+
+<ng-template #dynamicContainer></ng-template>
+
+<!--<pre *ngFor="let componentData of components;trackBy:componentData?.context.subs">
+{{componentData|json}}
+</pre>-->
