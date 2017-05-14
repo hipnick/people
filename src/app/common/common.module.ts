@@ -4,7 +4,7 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule, MdDialogModule, MdSnackBarModule, MaterialRootModule } from '@angular/material';
+import { MaterialModule, MdDialogModule, MdSnackBarModule } from '@angular/material';
 
 
 import 'hammerjs';
@@ -81,7 +81,7 @@ import { ImageUploadComponent } from './directives/input/image-upload/image-uplo
         JsonpModule,
         BrowserAnimationsModule,
         //NoopAnimationsModule,
-        MaterialModule, MdDialogModule, MdSnackBarModule, MaterialRootModule,
+        MaterialModule, MdDialogModule, MdSnackBarModule,
         ColorPickerModule
     ],
     //providers: [AppDataStoreService, LoginService],
